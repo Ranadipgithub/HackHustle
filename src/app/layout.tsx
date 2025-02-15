@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
-import React, { useState, useEffect } from "react"; // Import React and hooks
 import ScrollToTopButton from "@/components/ScrollToTop";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], weight: "300" });

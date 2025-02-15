@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function ScrollToTopButton() {
-  const pathname = usePathname();
   const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {

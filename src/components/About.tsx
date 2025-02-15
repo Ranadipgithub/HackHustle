@@ -11,8 +11,6 @@ export default function About() {
     offset: ["start end", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["20%", "-20%"]);
-
   return (
     <section id="about" ref={ref} className="py-20 relative overflow-hidden">
       <motion.div
