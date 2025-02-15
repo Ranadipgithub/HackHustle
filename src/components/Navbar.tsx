@@ -117,11 +117,15 @@ function NavLinks({
     const href = e.currentTarget.href;
     const targetId = href.replace(/.*#/, "");
     const elem = document.getElementById(targetId);
-    elem?.scrollIntoView({
-      behavior: "smooth",
-    });
+
     if (mobile) {
       setIsOpen(false);
+      // Wait for menu closing animation to finish before scrolling
+      setTimeout(() => {
+        elem?.scrollIntoView({ behavior: "smooth" });
+      }, 300); // Matches the menu close animation duration
+    } else {
+      elem?.scrollIntoView({ behavior: "smooth" });
     }
   };
 
