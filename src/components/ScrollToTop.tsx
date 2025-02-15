@@ -2,7 +2,6 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { HiArrowUp } from "react-icons/hi";
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function ScrollToTopButton() {

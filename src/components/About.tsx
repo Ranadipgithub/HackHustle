@@ -1,12 +1,12 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 import { useRef } from "react";
 import {features} from '../public/features'
 
 export default function About() {
   const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
+  useScroll({
     target: ref,
     offset: ["start end", "end start"],
   });

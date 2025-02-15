@@ -1,18 +1,16 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useRef } from "react";
 import { topics } from "@/public/topics";
 
 export default function Topics() {
   const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
+  useScroll({
     target: ref,
     offset: ["start end", "end start"],
   });
-
-  const y = useTransform(scrollYProgress, [0, 1], ["20%", "-20%"]);
 
   return (
     <section
