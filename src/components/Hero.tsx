@@ -149,7 +149,7 @@ export default function Hero() {
       {/* Scroll indicator - only shows if user hasn't scrolled past the threshold */}
       {showScrollIndicator && (
         <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center"
           animate={{ y: [0, 10, 0], opacity: [1, 0.6, 1] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
         >

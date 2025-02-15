@@ -57,9 +57,9 @@ export default function About() {
               transition={{ duration: 0.5, delay: index * 0.2 }}
               viewport={{ once: false }}
               whileHover={{ scale: 1.05 }}
-              className="p-6 rounded-lg border border-white/10 bg-black/50 backdrop-blur-sm hover:border-primary/50 transition-all"
+              className="p-6 rounded-lg border border-white/10 bg-black/50 backdrop-blur-sm hover:border-primary/50 transition-all text-center md:text-left"
             >
-              <feature.icon className="w-12 h-12 mb-4 text-primary" />
+              <feature.icon className="w-12 h-12 mb-4 text-primary mx-auto md:mx-0" />
               <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
               <p className="text-muted-foreground">{feature.description}</p>
             </motion.div>

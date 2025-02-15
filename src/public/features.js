@@ -20,5 +20,3 @@ export const features = [
       "Transform your ideas into reality and solve real-world problems.",
   },
 ];
-
-// export default features;

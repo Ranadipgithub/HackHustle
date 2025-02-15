@@ -3,7 +3,7 @@
 import { motion, useScroll, useSpring } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useRef } from "react";
-import { timeline } from "../public/timeline";
+import { timeline } from "@/public/timeline";
 
 export default function Timeline() {
   const ref = useRef(null);

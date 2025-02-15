@@ -35,11 +35,11 @@ export default function Prizes() {
               <Card
                 className={`bg-black/50 border-white/10 ${
                   index === 0 ? "border-primary/50" : ""
-                }`}
+                } text-center md:text-left`}
               >
-                <CardHeader>
+                <CardHeader className="items-center md:items-start">
                   <prize.icon
-                    className={`w-12 h-12 mb-4 ${
+                    className={`w-12 h-12 mb-4 mx-auto md:mx-0 ${
                       index === 0 ? "text-primary" : "text-secondary"
                     }`}
                   />
@@ -51,7 +51,10 @@ export default function Prizes() {
                   </p>
                   <ul className="space-y-2 text-muted-foreground">
                     {prize.benefits.map((benefit, i) => (
-                      <li key={i} className="flex items-center gap-2">
+                      <li
+                        key={i}
+                        className="flex items-center gap-2 justify-center md:justify-start"
+                      >
                         <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                         {benefit}
                       </li>

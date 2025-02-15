@@ -63,11 +63,13 @@ export default function Topics() {
               whileHover={{ scale: 1.05 }}
             >
               <Card className="bg-black/50 border-white/10 hover:border-primary/50 transition-all">
-                <CardHeader>
-                  <topic.icon className="w-8 h-8 mb-2 text-primary" />
-                  <CardTitle className="text-2xl">{topic.title}</CardTitle>
+                <CardHeader className="items-center md:items-start text-center md:text-left">
+                  <topic.icon className="w-8 h-8 mb-2 text-primary mx-auto md:mx-0" />
+                  <CardTitle className="text-2xl text-center md:text-left">
+                    {topic.title}
+                  </CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="text-center md:text-left">
                   <p className="text-muted-foreground">{topic.description}</p>
                 </CardContent>
               </Card>

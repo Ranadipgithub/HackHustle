@@ -4,7 +4,7 @@ export const prizes = [
   {
     icon: Trophy,
     title: "1st Prize",
-    amount: "$5,000",
+    amount: "25,000",
     benefits: [
       "Cash Prize",
       "Mentorship Program",
@@ -15,7 +15,7 @@ export const prizes = [
   {
     icon: Award,
     title: "2nd Prize",
-    amount: "$3,000",
+    amount: "20,000",
     benefits: [
       "Cash Prize",
       "Cloud Credits",
@@ -26,7 +26,7 @@ export const prizes = [
   {
     icon: Medal,
     title: "3rd Prize",
-    amount: "$1,500",
+    amount: "15,500",
     benefits: [
       "Cash Prize",
       "Cloud Credits",

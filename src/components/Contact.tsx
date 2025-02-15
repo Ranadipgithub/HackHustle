@@ -38,11 +38,11 @@ export default function Contact() {
               <div>
                 <h3 className="font-bold mb-2">Location</h3>
                 <p className="text-muted-foreground">
-                  Tech Hub Convention Center
+                  Mahatma Gandhi Rd, A-Zone, Durgapur
                   <br />
-                  123 Innovation Street
+                  Durgapur - 713209
                   <br />
-                  Silicon Valley, CA 94025
+                  West Bengal, India
                 </p>
               </div>
             </div>
@@ -64,9 +64,9 @@ export default function Contact() {
               <div>
                 <h3 className="font-bold mb-2">Phone</h3>
                 <p className="text-muted-foreground">
-                  +1 (555) 123-4567
+                  +91 9883862688
                   <br />
-                  +1 (555) 987-6543
+                  +91 7376554328
                 </p>
               </div>
             </div>

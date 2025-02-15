@@ -1,10 +1,12 @@
 import {
   Brain,
-  Cloud,
   Shield,
-  Smartphone,
   HeadsetIcon as VrHeadset,
   Waves,
+  Cpu,
+  ShieldCheck,
+  Lightbulb,
+  Rocket,
 } from "lucide-react";
 
 export const topics = [
@@ -15,20 +17,9 @@ export const topics = [
       "Build innovative solutions using machine learning and AI technologies.",
   },
   {
-    icon: Cloud,
-    title: "Cloud Computing",
-    description:
-      "Develop scalable applications using cloud-native technologies.",
-  },
-  {
     icon: Shield,
     title: "Cybersecurity",
     description: "Create solutions for modern security challenges and threats.",
-  },
-  {
-    icon: Smartphone,
-    title: "Mobile Development",
-    description: "Build next-generation mobile applications and experiences.",
   },
   {
     icon: VrHeadset,
@@ -37,9 +28,21 @@ export const topics = [
       "Create immersive experiences using augmented and virtual reality.",
   },
   {
-    icon: Waves,
+    icon: Cpu,
     title: "IoT & Hardware",
     description:
       "Develop solutions connecting the physical and digital worlds.",
+  },
+  {
+    icon: ShieldCheck, 
+    title: "Women Safety",
+    description:
+      "Contribute to a safer world by creating applications and systems that prioritize security and empowerment.",
+  },
+  {
+    icon: Lightbulb, 
+    title: "Student Innovation",
+    description:
+      "Unleash your creativity and build anything that inspires you outside the predefined tracks.",
   },
 ];
