@@ -2,11 +2,9 @@ import {
   Brain,
   Shield,
   HeadsetIcon as VrHeadset,
-  Waves,
   Cpu,
   ShieldCheck,
   Lightbulb,
-  Rocket,
 } from "lucide-react";
 
 export const topics = [
