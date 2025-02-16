@@ -80,19 +80,19 @@ export default function Hero() {
           >
             {/* IEEE Branding */}
             <div className="mb-6 flex flex-col items-center justify-center gap-3">
-              <div className="flex flex-col md:flex-row items-center justify-center gap-3">
+              <div className="flex items-center justify-center gap-3">
                 <Image
                   src={ieeesb_logo_theme}
                   alt="IEEE Student Branch"
-                  className="h-16 md:h-24 w-auto" // Smaller on mobile, larger on md+
+                  className="h-12 sm:h-16 md:h-24 w-auto"
                 />
                 <Image
                   src={ieeeCs}
                   alt="IEEE CS Society"
-                  className="h-16 md:h-24 w-auto filter invert" // Responsive heights with inversion filter
+                  className="h-12 sm:h-16 md:h-24 w-auto filter invert"
                 />
               </div>
-              <div className="text-xl md:text-2xl font-bold text-white">
+              <div className="text-lg sm:text-xl md:text-2xl font-bold text-white">
                 Presents
               </div>
             </div>
