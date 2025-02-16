@@ -2,14 +2,23 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Facebook, Github, Instagram, Twitter } from "lucide-react";
-import { Linkedin } from "lucide-react";
+import {
+  Facebook,
+  Github,
+  Instagram,
+  Twitter,
+  Linkedin,
+  MapPin,
+  Mail,
+  Phone,
+} from "lucide-react";
 
 export default function Footer() {
   return (
     <footer className="py-12 border-t border-white/10">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-8">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
+          {/* About Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -19,11 +28,12 @@ export default function Footer() {
           >
             <h3 className="text-xl font-bold gradient-text">HackHustle</h3>
             <p className="text-muted-foreground">
-              Join us for 48 hours of innovation, collaboration, and creative
+              Join us for 24 hours of innovation, collaboration, and creative
               problem-solving.
             </p>
           </motion.div>
 
+          {/* Quick Links */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -68,6 +78,7 @@ export default function Footer() {
             </ul>
           </motion.div>
 
+          {/* Follow Us */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -110,6 +121,7 @@ export default function Footer() {
             </div>
           </motion.div>
 
+          {/* Address */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -117,19 +129,34 @@ export default function Footer() {
             viewport={{ once: false }}
             className="space-y-4"
           >
-            <h4 className="font-bold">Newsletter</h4>
-            <p className="text-muted-foreground">
-              Subscribe to our newsletter for updates.
-            </p>
-            <div className="flex flex-wrap gap-2">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 min-w-[200px] px-4 py-2 bg-black/50 rounded-md border border-white/10 focus:outline-none focus:border-primary w-full sm:w-auto"
-              />
-              <button className="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary/90 transition-colors w-full sm:w-auto shrink-0">
-                Subscribe
-              </button>
+            <h4 className="font-bold">Address</h4>
+            <div className="space-y-3">
+              <div className="flex items-start gap-2">
+                <MapPin className="w-5 h-5 text-muted-foreground" />
+                <div className="text-muted-foreground text-sm">
+                  Mahatma Gandhi Rd, A-Zone, Durgapur <br />
+                  Durgapur - 713209 <br />
+                  West Bengal, India
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <Mail className="w-5 h-5 text-muted-foreground" />
+                <a
+                  href="mailto:info@hackhustle.com"
+                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                >
+                  info@hackhustle.com
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
+                <Phone className="w-5 h-5 text-muted-foreground" />
+                <a
+                  href="tel:+919883862688"
+                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                >
+                  +91 9883862688
+                </a>
+              </div>
             </div>
           </motion.div>
         </div>

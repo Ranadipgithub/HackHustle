@@ -47,7 +47,7 @@ export default function Prizes() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-3xl font-bold mb-4 gradient-text">
-                    {prize.amount}
+                    &#8377; {prize.amount}
                   </p>
                   <ul className="space-y-2 text-muted-foreground">
                     {prize.benefits.map((benefit, i) => (
