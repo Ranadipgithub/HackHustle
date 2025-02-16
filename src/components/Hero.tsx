@@ -84,12 +84,12 @@ export default function Hero() {
                 <Image
                   src={ieeesb_logo_theme}
                   alt="IEEE Student Branch"
-                  className="h-12 sm:h-16 md:h-24 w-auto"
+                  className="h-16 sm:h-20 md:h-24 w-auto"
                 />
                 <Image
                   src={ieeeCs}
                   alt="IEEE CS Society"
-                  className="h-12 sm:h-16 md:h-24 w-auto filter invert"
+                  className="h-16 sm:h-20 md:h-24 w-auto filter invert"
                 />
               </div>
               <div className="text-lg sm:text-xl md:text-2xl font-bold text-white">
