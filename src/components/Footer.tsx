@@ -142,7 +142,11 @@ export default function Footer() {
           className="text-center pt-8 border-t border-white/10"
         >
           <p className="text-muted-foreground">
-            © {new Date().getFullYear()} HackHustle. All rights reserved.
+            Made with{" "}
+            <span role="img" aria-label="heart">
+              ❤️
+            </span>{" "}
+            by IEEE SB NITD
           </p>
         </motion.div>
       </div>

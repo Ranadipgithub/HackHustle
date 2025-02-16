@@ -3,14 +3,17 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Countdown from "@/components/Countdown";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 import ieeesb_logo_theme from "@/public/ieeesb_logo_theme.svg";
-import ieeeCs from "@/public/ieee-cs-logo.webp"
+import ieeeCs from "@/public/ieee-cs-logo.webp";
 import Image from "next/image";
+import Typed from "typed.js";
 
 export default function Hero() {
   const ref = useRef(null);
+  const typeref = useRef(null);
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
@@ -18,6 +21,25 @@ export default function Hero() {
 
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
+
+  useEffect(() => {
+    const options = {
+      strings: [
+        "Events And Sessions",
+        "Win awesome prizes",
+        "15 March - 16 March",
+      ],
+      typeSpeed: 40,
+      backSpeed: 25,
+      loop: true,
+    };
+
+    const typed = new Typed(typeref.current, options);
+
+    return () => {
+      typed.destroy();
+    };
+  }, []);
 
   return (
     <section
@@ -100,8 +122,9 @@ export default function Hero() {
             <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold mb-4 gradient-text leading-tight">
               HackHustle 2025
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8">
-              Code. Create. Conquer.
+            <p className="text-xl md:text-2xl text-white mb-8">
+              {/* Use the separate ref for Typed.js */}
+              <span ref={typeref}></span>
             </p>
           </motion.div>
 
