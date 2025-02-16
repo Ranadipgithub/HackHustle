@@ -5,6 +5,9 @@ import { Button } from "@/components/ui/button";
 import Countdown from "@/components/Countdown";
 import { useRef } from "react";
 import Link from "next/link";
+import ieeesb_logo_theme from "@/public/ieeesb_logo_theme.svg";
+import ieeeCs from "@/public/ieee-cs-logo.webp"
+import Image from "next/image";
 
 export default function Hero() {
   const ref = useRef(null);
@@ -75,7 +78,26 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: false }}
           >
-            <h1 className="text-4xl md:text-7xl lg:text-8xl font-bold mb-4 gradient-text leading-tight">
+            {/* IEEE Branding */}
+            <div className="mb-6 flex flex-col items-center justify-center gap-3">
+              <div className="flex flex-col md:flex-row items-center justify-center gap-3">
+                <Image
+                  src={ieeesb_logo_theme}
+                  alt="IEEE Student Branch"
+                  className="h-16 md:h-24 w-auto" // Smaller on mobile, larger on md+
+                />
+                <Image
+                  src={ieeeCs}
+                  alt="IEEE CS Society"
+                  className="h-16 md:h-24 w-auto filter invert" // Responsive heights with inversion filter
+                />
+              </div>
+              <div className="text-xl md:text-2xl font-bold text-white">
+                Presents
+              </div>
+            </div>
+
+            <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold mb-4 gradient-text leading-tight">
               HackHustle 2025
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8">
@@ -122,7 +144,6 @@ export default function Hero() {
           </motion.div>
         </motion.div>
       </div>
-      
     </section>
   );
 }
