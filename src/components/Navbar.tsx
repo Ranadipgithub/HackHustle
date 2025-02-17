@@ -32,7 +32,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           <Link
             href="/"
-            className="text-xl font-bold gradient-text"
+            className="text-xl md:text-2xl font-bold gradient-text"
             scroll={false}
             onClick={(e) => {
               e.preventDefault();
@@ -55,15 +55,15 @@ export default function Navbar() {
 
           {/* Hamburger Menu */}
           <button
-            className="md:hidden w-10 h-10 flex items-center justify-center"
+            className="md:hidden w-8 h-6 flex items-center justify-center"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
-            <div className="relative w-6 h-5">
+            <div className="relative w-5 h-4">
               <motion.span
                 className="absolute w-full h-0.5 bg-primary rounded-full"
                 style={{ top: "0%" }}
-                animate={isOpen ? { rotate: 45, y: 10 } : { rotate: 0, y: 0 }}
+                animate={isOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
                 transition={{ duration: 0.3 }}
               />
               <motion.span
@@ -75,7 +75,7 @@ export default function Navbar() {
               <motion.span
                 className="absolute w-full h-0.5 bg-primary rounded-full"
                 style={{ top: "100%" }}
-                animate={isOpen ? { rotate: -45, y: -10 } : { rotate: 0, y: 0 }}
+                animate={isOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
                 transition={{ duration: 0.3 }}
               />
             </div>
