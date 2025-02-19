@@ -1,9 +1,11 @@
 "use client";
 
 import type React from "react";
+
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Navbar() {
@@ -32,12 +34,11 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           <Link
             href="/"
-            className="text-xl md:text-2xl font-bold gradient-text"
-            scroll={false}
             onClick={(e) => {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
+            className="text-2xl font-bold gradient-text"
           >
             HackHustle
           </Link>
@@ -47,38 +48,23 @@ export default function Navbar() {
             <NavLinks />
             <Button
               variant="default"
-              className="bg-primary hover:bg-primary/90"
+              className="bg-primary hover:bg-primary/90 text-md"
             >
               Register Now
             </Button>
           </div>
 
-          {/* Hamburger Menu */}
+          {/* Mobile Navigation */}
           <button
-            className="md:hidden w-8 h-6 flex items-center justify-center"
+            className="md:hidden p-2"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
-            <div className="relative w-5 h-4">
-              <motion.span
-                className="absolute w-full h-0.5 bg-primary rounded-full"
-                style={{ top: "0%" }}
-                animate={isOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
-                transition={{ duration: 0.3 }}
-              />
-              <motion.span
-                className="absolute w-full h-0.5 bg-primary rounded-full"
-                style={{ top: "50%" }}
-                animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
-                transition={{ duration: 0.3 }}
-              />
-              <motion.span
-                className="absolute w-full h-0.5 bg-primary rounded-full"
-                style={{ top: "100%" }}
-                animate={isOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
-                transition={{ duration: 0.3 }}
-              />
-            </div>
+            {isOpen ? (
+              <X className="text-primary" />
+            ) : (
+              <Menu className="text-primary" />
+            )}
           </button>
         </div>
       </div>
@@ -91,7 +77,8 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-black/95 backdrop-blur-sm border-b border-white/10 overflow-hidden"
+            viewport={{ once: false }}
+            className="md:hidden bg-black/95 border-b border-white/10 overflow-hidden"
           >
             <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
               <NavLinks mobile setIsOpen={setIsOpen} />
@@ -130,33 +117,30 @@ function NavLinks({
     const href = e.currentTarget.href;
     const targetId = href.replace(/.*#/, "");
     const elem = document.getElementById(targetId);
-    elem?.scrollIntoView({
-      behavior: "smooth",
-    });
+
     if (mobile) {
       setIsOpen(false);
+      setTimeout(() => {
+        elem?.scrollIntoView({ behavior: "smooth" });
+      }, 300);
+    } else {
+      elem?.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
     <>
-      {links.map((link, i) => (
-        <motion.div
+      {links.map((link) => (
+        <Link
           key={link.href}
-          initial={mobile ? { opacity: 0, x: -20 } : false}
-          animate={mobile ? { opacity: 1, x: 0 } : false}
-          transition={{ delay: i * 0.1 }}
+          href={link.href}
+          className={`text-md hover:text-primary transition-colors ${
+            mobile ? "block py-2" : ""
+          }`}
+          onClick={handleScroll}
         >
-          <Link
-            href={link.href}
-            className={`text-md hover:text-primary transition-colors ${
-              mobile ? "block py-2" : ""
-            }`}
-            onClick={handleScroll}
-          >
-            {link.label}
-          </Link>
-        </motion.div>
+          {link.label}
+        </Link>
       ))}
     </>
   );
